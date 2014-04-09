@@ -1,5 +1,7 @@
 # papertrail_remote_syslog Chef Cookbook
 
+[![Build Status](https://travis-ci.org/rjocoleman/papertrail_remote_syslog.svg?branch=master)](https://travis-ci.org/rjocoleman/papertrail_remote_syslog)
+
 A Chef cookbook to install [remote_syslog](https://github.com/papertrail/remote_syslog/) - a ruby daemon to transmit logs to papertrailapp.com
 
 Currently supports only init and upstart.
