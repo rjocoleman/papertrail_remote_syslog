@@ -1,6 +1,18 @@
-# CHANGELOG for remote_syslog
+## 0.3.0
 
-This file is used to list changes made in each version of remote_syslog.
+* Forked from upstream.
+* Temporarily removed Jamie tests pending re-implimentation with kitchen ci.
+* Added support for upstart init scripts.
+* Created README.md
+* Refactored attributes to be consistent with newer versions of Chef.
+* Changed the meta recipe.
+* Re-do Chefspec from scratch (Chefspec 3.0).
+* Add Travis CI
+
+
+#### Forked from upstream.
+
+Prior to v0.3.0 this was https://github.com/bbg-cookbooks/remote_syslog
 
 ## 0.2.0:
 
@@ -9,8 +21,3 @@ This file is used to list changes made in each version of remote_syslog.
 ## 0.1.0:
 
 * Initial release of remote_syslog
-
-- - - 
-Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
-
-The [Github Flavored Markdown page](http://github.github.com/github-flavored-markdown/) describes the differences between markdown on github and standard markdown.

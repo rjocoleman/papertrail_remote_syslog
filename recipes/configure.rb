@@ -14,20 +14,18 @@
 #  host: logs.papertrailapp.com
 #  port: 12345   # optional, defaults to 514
 
-template "/etc/log_files.yml" do
-  source "log_files.erb"
-  owner "root"
-  group "root"
-  mode  "0644"
-  notifies :restart, "service[remote_syslog]"
+template '/etc/log_files.yml' do
+  source 'log_files.erb'
+  owner 'root'
+  group 'root'
+  mode  '0644'
   variables :yaml => {
-              'files'            => node.remote_syslog.conf.files,
-              'exclude_files'    => node.remote_syslog.exclude_files,
-              'hostname'         => node.remote_syslog.hostname,
-              'parse_fields'     => node.remote_syslog.parse_fields,
-              'prepend'          => node.remote_syslog.prepend,
-              'exclude_patterns' => node.remote_syslog.exclude_patterns,
-              'destination'      => node.remote_syslog.destination
-            }.to_yaml(:SortKeys => true).split("\n").map{|l| l.gsub(/ \!ruby.*$/, "").gsub(/---/, "")}.join("\n")
-
+    'files'            => node['remote_syslog']['conf']['files'],
+    'exclude_files'    => node['remote_syslog']['exclude_files'],
+    'hostname'         => node['remote_syslog']['hostname'],
+    'parse_fields'     => node['remote_syslog']['parse_fields'],
+    'prepend'          => node['remote_syslog']['prepend'],
+    'exclude_patterns' => node['remote_syslog']['exclude_patterns'],
+    'destination'      => node['remote_syslog']['destination']
+  }.to_yaml(:SortKeys => true).split("\n").map{|l| l.gsub(/ \!ruby.*$/, "").gsub(/---/, "")}.join("\n")
 end

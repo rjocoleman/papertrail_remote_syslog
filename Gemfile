@@ -1,8 +1,4 @@
-source :rubygems
+source 'http://rubygems.org'
 
-gem 'jamie'
-gem 'jamie-vagrant'
-gem 'berkshelf'
-gem 'vagrant', '~> 1.0.5'
-gem 'chefspec'
-gem 'foodcritic'
+gem 'chefspec',   '>= 3.2'
+gem 'foodcritic', '~> 3.0'
