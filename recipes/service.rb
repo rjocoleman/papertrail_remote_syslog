@@ -21,5 +21,5 @@ when 'upstart'
     action [:start, :enable]
   end
 else
-  raise 'Unsupported init style'
+  fail 'Unsupported init style'
 end
