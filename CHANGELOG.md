@@ -1,3 +1,10 @@
+## 0.3.2
+
+* update to newest remote_syslog example init script
+* add new remote_syslog config setting - `new_file_check_interval`
+* convert upstart to a template, add support for multiple executable dirs
+
+
 ## 0.3.1
 
 * Rubocop style cleanup

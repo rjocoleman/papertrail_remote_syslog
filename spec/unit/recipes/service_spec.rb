@@ -19,7 +19,7 @@ describe 'papertrail_remote_syslog::service' do
     chef_run.node.set['remote_syslog']['init_style'] = 'upstart'
     chef_run.converge(described_recipe)
 
-    expect(chef_run).to create_cookbook_file('/etc/init/remote_syslog.conf')
+    expect(chef_run).to create_template('/etc/init/remote_syslog.conf')
   end
 
 end

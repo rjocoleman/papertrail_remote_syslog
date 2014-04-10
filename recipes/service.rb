@@ -1,7 +1,7 @@
 case node['remote_syslog']['init_style']
 when 'init'
   cookbook_file '/etc/init.d/remote_syslog' do
-    source 'remote_syslog.init'
+    source 'remote_syslog.init.d'
     owner 'root'
     group 'root'
     mode '0755'
@@ -10,8 +10,8 @@ when 'init'
     action [:start, :enable]
   end
 when 'upstart'
-  cookbook_file '/etc/init/remote_syslog.conf' do
-    source 'remote_syslog.upstart.conf'
+  template '/etc/init/remote_syslog.conf' do
+    source 'remote_syslog.upstart.conf.erb'
     owner 'root'
     group 'root'
     mode '0755'

@@ -1,5 +1,15 @@
 #!/bin/bash
-#
+
+### BEGIN INIT INFO
+# Provides: remote_syslog
+# Required-Start: $remote_fs $syslog
+# Required-Stop: $remote_fs $syslog
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: Start and Stop
+# Description: Runs remote_syslog
+### END INIT INFO
+
 #       /etc/init.d/remote_syslog
 #
 # Starts the remote_syslog daemon
@@ -13,7 +23,7 @@ prog="remote_syslog"
 config="/etc/log_files.yml"
 pid_dir="/var/run"
 
-EXTRAOPTIONS="--tls"
+EXTRAOPTIONS=""
 
 pid_file="$pid_dir/$prog.pid"
 
@@ -29,7 +39,7 @@ start(){
     echo -n $"Starting $prog: "
 
     unset HOME MAIL USER USERNAME
-    $prog -c $config --pid-file $pid_file "$EXTRAOPTIONS"
+    $prog -c $config --pid-file $pid_file $EXTRAOPTIONS
     RETVAL=$?
     echo
     return $RETVAL
@@ -75,26 +85,26 @@ condrestart(){
 # See how we were called.
 case "$1" in
     start)
-  start
-  ;;
+	start
+	;;
     stop)
-  stop
-  ;;
+	stop
+	;;
     status)
-  status
-  ;;
+	status
+	;;
     restart)
-  restart
-  ;;
+	restart
+	;;
     reload)
-  reload
-  ;;
+	reload
+	;;
     condrestart)
-  condrestart
-  ;;
+	condrestart
+	;;
     *)
-  echo $"Usage: $0 {start|stop|status|restart|condrestart|reload}"
-  RETVAL=1
+	echo $"Usage: $0 {start|stop|status|restart|condrestart|reload}"
+	RETVAL=1
 esac
 
 exit $RETVAL
