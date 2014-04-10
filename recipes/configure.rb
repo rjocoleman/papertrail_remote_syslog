@@ -27,7 +27,7 @@ config = {
   'parse_fields'            => node['remote_syslog']['parse_fields'],
   'prepend'                 => node['remote_syslog']['prepend'],
   'exclude_patterns'        => node['remote_syslog']['exclude_patterns'].to_a,
-  'destination'             => node['remote_syslog']['destination'].to_a,
+  'destination'             => node['remote_syslog']['destination'].to_h,
   'new_file_check_interval' => node['remote_syslog']['new_file_check_interval']
 }
 

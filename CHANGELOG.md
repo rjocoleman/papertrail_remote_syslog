@@ -1,3 +1,10 @@
+## 0.3.3
+
+* Fix incorrect config file generation
+* Add test to ensure configure file is valid (to sample known good)
+* Style improvements (Rubocop)
+
+
 ## 0.3.2
 
 * update to newest remote_syslog example init script

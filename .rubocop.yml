@@ -1,0 +1,5 @@
+NumericLiterals:
+  Enabled: false
+
+WordArray:
+  Enabled: false
